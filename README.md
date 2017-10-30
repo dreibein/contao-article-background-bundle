@@ -1,6 +1,8 @@
 # Dreibein Article-Background Bundle 
 
 
+**required automatisch dreibein/contao-article-config-bundle**
+
 im Artikel-Template kann man nun folgende Felder noch abfragen:
 
 - dreibein_article_background_active
