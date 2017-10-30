@@ -8,7 +8,9 @@
 
 namespace Dreibein\ArticleBackgroundBundle;
 
-class DreibeinArticleBackgroundBundle
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+class DreibeinArticleBackgroundBundle extends Bundle
 {
 
 }
