@@ -88,8 +88,3 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['dreibein_article_background_overlay_
     'eval'      => ['tl_class'=>'w50', 'maxlength'=>4],
     'sql'       => "varchar(4) NULL"
 ];
-
-class tl_dreibein_article
-{
-
-}
