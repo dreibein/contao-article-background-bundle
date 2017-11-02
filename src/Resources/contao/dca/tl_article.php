@@ -9,8 +9,18 @@
 namespace Resources\contao\dca;
 
 
+// Selector
+$GLOBALS['TL_DCA']['tl_article']['palettes']['__selector__'][] = 'dreibein_article_background_active';
+
 // Palettes
-$GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace(";{layout_legend}", ",dreibein_article_background_active,dreibein_article_background_pic,dreibein_article_background_size,dreibein_article_background_repeat,dreibein_article_background_area,dreibein_article_background_attachment,dreibein_article_background_overlay,dreibein_article_background_overlay_opacity;{layout_legend}", $GLOBALS['TL_DCA']['tl_article']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace(";{layout_legend}", ",dreibein_article_background_active;{layout_legend}", $GLOBALS['TL_DCA']['tl_article']['palettes']['default']);
+
+// Subpalettes
+$GLOBALS['TL_DCA']['tl_article']['subpalettes']['dreibein_article_background_active'] = 'dreibein_article_background_pic,dreibein_article_background_size,dreibein_article_background_repeat,dreibein_article_background_area,dreibein_article_background_attachment,dreibein_article_background_overlay,dreibein_article_background_overlay_opacity';
+
+
+// Palettes
+//$GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace(";{layout_legend}", ",dreibein_article_background_active,dreibein_article_background_pic,dreibein_article_background_size,dreibein_article_background_repeat,dreibein_article_background_area,dreibein_article_background_attachment,dreibein_article_background_overlay,dreibein_article_background_overlay_opacity;{layout_legend}", $GLOBALS['TL_DCA']['tl_article']['palettes']['default']);
 
 
 // DCA Felder
