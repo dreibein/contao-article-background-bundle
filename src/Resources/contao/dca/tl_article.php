@@ -52,7 +52,7 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['dreibein_article_background_area'] =
     'label'     => &$GLOBALS['TL_LANG']['tl_article']['dreibein_article_background_area'],
     'exclude'   => true,
     'inputType' => 'select',
-    'options'   => ['center center'=>'center center', 'center top'=>'center top', 'center bottom'=>'center bottom'],
+    'options'   => ['left top'=>'left top', 'left center'=>'left center', 'left bottom'=>'left bottom', 'right top'=>'right top', 'right center'=>'right center', 'right bottom'=>'right bottom', 'center top'=>'center top', 'center center'=>'center center', 'center bottom'=>'center bottom'],
     'eval'      => ['tl_class'=>'w50 wizard clr', 'includeBlankOption'=>true],
     'sql'       => "varchar(20) NULL"
 ];
