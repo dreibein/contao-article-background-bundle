@@ -36,7 +36,7 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['dreibein_article_background_pic'] = 
     'label'     => &$GLOBALS['TL_LANG']['tl_article']['dreibein_article_background_pic'],
     'exclude'   => true,
     'inputType' => 'fileTree',
-    'eval'      => ['filesOnly'=>'true', 'files'=>'true', 'fieldType'=>'radio', 'tl_class'=>'clr w50'],
+    'eval'      => ['filesOnly'=>'true', 'files'=>'true', 'fieldType'=>'radio', 'tl_class'=>'clr long'],
     'sql'       => "binary(16) NULL"
 ];
 
