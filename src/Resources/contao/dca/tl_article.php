@@ -37,7 +37,7 @@ $GLOBALS['TL_DCA'][$table]['fields']['dreibein_article_background_pic'] = [
     'exclude' => true,
     'inputType' => 'fileTree',
     'eval' => ['filesOnly' => 'true', 'files' => 'true', 'fieldType' => 'radio', 'tl_class' => 'clr long'],
-    'sql' => ['type' => 'blob', 'notnull' => true],
+    'sql' => ['type' => 'blob', 'notnull' => false],
 ];
 
 $GLOBALS['TL_DCA'][$table]['fields']['dreibein_article_background_size'] = [
