@@ -17,7 +17,7 @@
     }
   ],
   "require": {
-    "php": "^7.3",
+    "php": "^7.2",
     "dreibein/contao-article-config-bundle": "^1.0",
     "contao/core-bundle": "^4.4",
     "contao/conflicts": "@dev"
