@@ -10,31 +10,17 @@
       "homepage": "https://www.agentur-dreibein.de"
     }
   ],
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/dreibein/contao-article-config-bundle.git"
-    }
-  ],
   "require": {
-    "php": "^7.2",
-    "dreibein/contao-article-config-bundle": "^1.0",
-    "contao/core-bundle": "^4.4",
+    "php": ">=7.3",
+    "contao/core-bundle": "^4.9",
     "contao/conflicts": "@dev"
   },
   "require-dev": {
-    "php-http/guzzle6-adapter": "^2.0",
-    "phpro/grumphp": "^0.14.2",
-    "jakub-onderka/php-parallel-lint": "^1.0",
     "friendsofphp/php-cs-fixer": "^2.14",
-    "squizlabs/php_codesniffer": "^3.3",
     "contao/manager-plugin": "^2.0"
   },
   "prefer-stable": true,
   "config": {
-    "github-oauth": {
-      "github.com": "8d0e9e9befa449d90ea313ba9c8fae9dd1e09276"
-    },
     "preferred-install": "dist",
     "sort-packages": true
   },

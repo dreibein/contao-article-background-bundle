@@ -1,78 +1,45 @@
 
-<div class="<?= $this->class ?> <?= $this->dreibein_article_config_class; ?> <?= $this->dreibein_article_config_background; ?> <?= $this->dreibein_article_config_space; ?> block <?php if(!$this->dreibein_article_background_active): ?>nobak<?php endif; ?>"<?= $this->cssID ?>
+<div class="<?= $this->class ?> block <?php if (!$this->dreibeinArticleBackground): ?>nobak<?php endif; ?>"<?= $this->cssID ?> style="<?= $this->dreibeinArticleBackgroundStyle ?>">
 
-<?php if($this->dreibein_article_background_active):?>
-    style="
-    <?php if($this->dreibein_article_background_pic):?>
-        <?php $objFile = Contao\FilesModel::findByPk($this->dreibein_article_background_pic)->path; ?>
-        background-image: url('<?= $objFile ;?>');
-        <?php if($this->dreibein_article_background_size): ?>
-            background-size:<?= $this->dreibein_article_background_size; ?>;
-        <?php endif;?>
-
-        <?php if($this->dreibein_article_background_repeat): ?>
-            background-repeat:<?= $this->dreibein_article_background_repeat;?>;
-        <?php endif;?>
-
-        <?php if($this->dreibein_article_background_area): ?>
-            background-position:<?= $this->dreibein_article_background_area; ?>;
-        <?php endif;?>
-
-        <?php if(!\Environment::get('agent')->mobile): ?>
-            <?php if($this->dreibein_article_background_attachment):?>
-                background-attachment:<?= $this->dreibein_article_background_attachment; ?>;
-            <?php endif;?>
-        <?php endif;?>
-    <?php endif;?>
-    position:relative;
-    <?= $this->style ?> "
-<?php endif;?>>
-
-<?php if($this->dreibein_article_background_active && $this->dreibein_article_background_pic && $this->dreibein_article_background_overlay):?>
-    <div class="mod_article_overlay <?= $this->dreibein_article_config_background; ?>" style="top:0;left:0;right:0;bottom:0;position:absolute;<?php if($this->dreibein_article_background_overlay_opacity):?>opacity:<?= $this->dreibein_article_background_overlay_opacity ;?><?php endif;?>"></div>
+<?php if ($this->dreibeinArticleOverlay): ?>
+    <div class="mod_article_overlay" style="<?= $this->dreibeinArticleOverlayStyle ?>"></div>
 <?php endif;?>
 
-<?php if($this->dreibein_article_config_class !== 'no-inside'):?>
-        <div class="inside">
+<?php if ($this->printable): ?>
+    <!-- indexer::stop -->
+    <div class="pdf_link">
+
+        <?php if ($this->printButton): ?>
+        <a href="<?= $this->print ?>" rel="nofollow" title="<?= $this->printTitle ?>" onclick="window.print();return false"><?= Image::getHtml('assets/contao/images/print.gif') ?></a>
+        <?php endif; ?>
+
+        <?php if ($this->pdfButton): ?>
+        <a href="<?= $this->href ?>" rel="nofollow" title="<?= $this->pdfTitle ?>"><?= Image::getHtml('assets/contao/images/pdf.gif') ?></a>
+        <?php endif; ?>
+
+        <?php if ($this->facebookButton): ?>
+        <a href="share/?p=facebook&amp;u=<?= $this->encUrl ?>" rel="nofollow" title="<?= $this->facebookTitle ?>" onclick="window.open(this.href,'','width=640,height=380,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');return false"><?= Image::getHtml('assets/contao/images/facebook.gif') ?></a>
+        <?php endif; ?>
+
+        <?php if ($this->twitterButton): ?>
+        <a href="share/?p=twitter&amp;u=<?= $this->encUrl ?>&amp;t=<?= $this->encTitle ?>" rel="nofollow" title="<?= $this->twitterTitle ?>" onclick="window.open(this.href,'','width=640,height=380,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');return false"><?= Image::getHtml('assets/contao/images/twitter.gif') ?></a>
+        <?php endif; ?>
+
+        <?php if ($this->gplusButton): ?>
+        <a href="share/?p=gplus&amp;u=<?= $this->encUrl ?>" rel="nofollow" title="<?= $this->gplusTitle ?>" onclick="window.open(this.href,'','width=600,height=200,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');return false"><?= Image::getHtml('assets/contao/images/gplus.gif') ?></a>
+        <?php endif; ?>
+
+    </div>
+    <!-- indexer::continue -->
 <?php endif; ?>
-    <?php if ($this->printable): ?>
-        <!-- indexer::stop -->
-        <div class="pdf_link">
 
-            <?php if ($this->printButton): ?>
-            <a href="<?= $this->print ?>" rel="nofollow" title="<?= $this->printTitle ?>" onclick="window.print();return false"><?= Image::getHtml('assets/contao/images/print.gif') ?></a>
-            <?php endif; ?>
+<?= implode('', $this->elements) ?>
 
-            <?php if ($this->pdfButton): ?>
-            <a href="<?= $this->href ?>" rel="nofollow" title="<?= $this->pdfTitle ?>"><?= Image::getHtml('assets/contao/images/pdf.gif') ?></a>
-            <?php endif; ?>
-
-            <?php if ($this->facebookButton): ?>
-            <a href="share/?p=facebook&amp;u=<?= $this->encUrl ?>" rel="nofollow" title="<?= $this->facebookTitle ?>" onclick="window.open(this.href,'','width=640,height=380,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');return false"><?= Image::getHtml('assets/contao/images/facebook.gif') ?></a>
-            <?php endif; ?>
-
-            <?php if ($this->twitterButton): ?>
-            <a href="share/?p=twitter&amp;u=<?= $this->encUrl ?>&amp;t=<?= $this->encTitle ?>" rel="nofollow" title="<?= $this->twitterTitle ?>" onclick="window.open(this.href,'','width=640,height=380,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');return false"><?= Image::getHtml('assets/contao/images/twitter.gif') ?></a>
-            <?php endif; ?>
-
-            <?php if ($this->gplusButton): ?>
-            <a href="share/?p=gplus&amp;u=<?= $this->encUrl ?>" rel="nofollow" title="<?= $this->gplusTitle ?>" onclick="window.open(this.href,'','width=600,height=200,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');return false"><?= Image::getHtml('assets/contao/images/gplus.gif') ?></a>
-            <?php endif; ?>
-
-        </div>
-        <!-- indexer::continue -->
-    <?php endif; ?>
-
-    <?= implode('', $this->elements) ?>
-
-    <?php if ($this->backlink): ?>
-        <!-- indexer::stop -->
-        <div class="back">
-            <p><a  class="button button-left" href="<?= $this->backlink ?>" title="<?= $this->back ?>"><?= $this->back ?></a></p>
-        </div>
-        <!-- indexer::continue -->
-    <?php endif; ?>
-    <?php if($this->dreibein_article_config_class !== 'no-inside'):?>
-        </div>
-    <?php endif; ?>
+<?php if ($this->backlink): ?>
+    <!-- indexer::stop -->
+    <div class="back">
+        <p><a  class="button button-left" href="<?= $this->backlink ?>" title="<?= $this->back ?>"><?= $this->back ?></a></p>
+    </div>
+    <!-- indexer::continue -->
+<?php endif; ?>
 </div>

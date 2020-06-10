@@ -1,0 +1,5 @@
+services:
+  Dreibein\ArticleBackgroundBundle\EventListener\CompileArticleListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: compileArticle, method: onCompileArticle, priority: 0 }
