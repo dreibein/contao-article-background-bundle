@@ -45,7 +45,7 @@ class CompileArticleListener
             $template->dreibeinArticleBackground = true;
 
             // Add the default style
-            $style = 'position:relative; background-image: url(\'' . $backgroundFile->path . '\'");';
+            $style = 'position:relative; background-image: url(\'' . $backgroundFile->path . '\');';
 
             // Set the background size
             if ($data['dreibein_article_background_size']) {
